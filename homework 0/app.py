@@ -4,7 +4,7 @@ app.py — the entry point for the application.
 Run this file to start the web server:
     python app.py
 
-Then open your browser to: http://localhost:8080
+Then open your browser to: http://localhost:5000
 
 HOW THIS WORKS:
   1. create_app() (in flask_app/__init__.py) sets up the Flask app:
@@ -29,10 +29,12 @@ app, socketio = create_app()
 
 if __name__ == "__main__":
     print("Starting AI Resume Agent...")
-    print("Open your browser to: http://localhost:8080")
+    print("Open your browser to: http://localhost:5000")
     # NOTE: use_reloader=False is required with eventlet.
     # Werkzeug's reloader starts the app twice, and the second process
     # tries to bind the same port while the first is already using it.
     # To see Python changes, stop the server (Ctrl+C) and restart it.
     # HTML/CSS/JS changes are visible on browser refresh with no restart needed.
-    socketio.run(app, host='0.0.0.0', port=8080, debug=True, use_reloader=False)
+
+socketio.run(app, host='0.0.0.0', port=8000, debug=True, use_reloader=False)
+
